@@ -203,10 +203,6 @@ def main():
 
         print(hangman_draw(body_parts))
 
-        print(word)
-        print(letter_in_word)
-        print(body_parts)
-
         # Runed out of lives
         if body_parts == 5:
             # Clear terminal
@@ -286,6 +282,43 @@ def main():
             system('clear')
 
             print(w)
+
+    print(f'The word is: {word}')
+
+    # Game manu flow
+    while True:
+        try:
+
+            print("""
+            
+    █▀█ █░░ ▄▀█ █▄█   ▄▀█ █▀▀ ▄▀█ █ █▄░█ ▀█
+    █▀▀ █▄▄ █▀█ ░█░   █▀█ █▄█ █▀█ █ █░▀█ ░▄
+            """)
+            answer = input("""
+        ▄█ ░   █▄█ █▀▀ █▀
+        ░█ ▄   ░█░ ██▄ ▄█
+
+        
+        ▀█ ░   █▄░█ █▀█
+        █▄ ▄   █░▀█ █▄█   
+            """)
+
+            valid_options = ['1', '2']
+
+            if answer in valid_options == False:
+                raise ValueError('SELECT A VALID OPTION!!')
+
+            if answer == valid_options[0]:
+                main()
+            else:
+                print('HOPE TO SEE YOU SOON!!')
+
+            break
+
+        except ValueError as ve:
+            print(ve)
+            break
+
     
 
 if __name__ == '__main__':
